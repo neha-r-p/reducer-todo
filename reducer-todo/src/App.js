@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import './App.css';
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList';
@@ -6,12 +6,14 @@ import { initialState, Reducer }  from './reducers/reducer';
 
 
 function App() {
-  const [ todoList, setTodoList ] = useState();
+  const [ state, dispatch ] = useReducer(Reducer, initialState);
+
+  console.log(state)
 
   return (
     <div className="App">
-      <TodoForm />
-      <TodoList />
+      <TodoForm dispatch={dispatch} />
+      <TodoList dispatch={dispatch} />
     </div>
   );
 }

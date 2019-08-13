@@ -1,10 +1,10 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = () => {
+const TodoList = props => {
     return(
         <div>TodoList
-            <Todo />
+            <Todo dispatch={props.dispatch} />
         </div>
     )
 }
