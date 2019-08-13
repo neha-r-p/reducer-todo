@@ -7,13 +7,17 @@ const TodoForm = props => {
 
   return (
     <form>
-      <input type="text" />
+      <input type="text"
+      onChange={ event =>{
+          setFormState(event.target.value)
+      } }
+      />
       <button
         type="submit"
         onClick={event => {
           event.preventDefault();
           console.log("submitted");
-          props.dispatch({ type: "ADD_TODO", payload: event.target.value });
+          props.dispatch({ type: "ADD_TODO", payload: formState});
         }}
       >
         Add Todo
