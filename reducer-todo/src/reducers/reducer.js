@@ -8,6 +8,8 @@ export const Reducer = (state, action) => {
           return {
             ...state,
             item: action.payload,
+            completed: false,
+            id: new Date()
           };
         case 'TOGGLE_TODO':
           return {
@@ -17,6 +19,7 @@ export const Reducer = (state, action) => {
         case 'REMOVE_TODO':
             return {
                 ...state,
+                state.todos.filter(todo => todo.completed === false)
 
             }
         default:
