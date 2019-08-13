@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <TodoForm dispatch={dispatch} />
-      <TodoList dispatch={dispatch} />
+      <TodoList dispatch={dispatch} state={state} />
     </div>
   );
 }
