@@ -1,6 +1,6 @@
 
-export const initialState = {
-    item: '',
-    completed: false,
-    id: '',
+export const initialState = {[]}
+
+export const Reducer = (state, action) => {
+
 }
