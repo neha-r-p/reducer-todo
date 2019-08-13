@@ -7,9 +7,11 @@ export const Reducer = (state, action) => {
         case 'ADD_TODO':
           return {
             ...state,
-            item: action.payload,
+            todos: [ ...state.todos,
+              {item: action.payload,
             completed: false,
-            id: new Date()
+            id: Date.now() }
+            ]
           };
         case 'TOGGLE_TODO':
           return {
@@ -23,7 +25,7 @@ export const Reducer = (state, action) => {
 
             }
         default:
-          return state;
+          return state.todos;
       }
 
 }
