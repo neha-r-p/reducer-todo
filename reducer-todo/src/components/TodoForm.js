@@ -26,6 +26,7 @@ const TodoForm = props => {
         onClick={event => {
           event.preventDefault();
           console.log("cleared");
+          props.dispatch({ type: "REMOVE_TODO"})
         }}
       >
         Clear Completed
